@@ -4,7 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
  
 import { Desks } from '../api/desks.js';
-import Desk from './Desk.jsx';
+import Floor from './Floor.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
 
 
@@ -21,12 +21,6 @@ class App extends Component {
  
     // Clear form
     ReactDOM.findDOMNode(this.refs.textInput).value = '';
-  }
-
-  renderDesks() {
-    return this.props.desks.map((desk) => (
-        <Desk key={desk._id} desk={desk} currentUser={this.props.currentUser} />
-    ));
   }
  
   render() {
@@ -48,7 +42,8 @@ class App extends Component {
             </form> : ''
         }
  
-        {this.renderDesks()}
+        <Floor desks={this.props.desks} currentUser={this.props.currentUser} />
+        
       </div>
     );
   }

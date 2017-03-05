@@ -15,6 +15,8 @@ body {
   margin: 0;
  
   font-size: 14px;
+
+  overflow: hidden;
 }
  
 .container {
@@ -159,3 +161,17 @@ header .hide-completed {
       padding: 10px;
       float: left;
     }
+
+.floorContainer {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+
+    box-sizing: border-box;
+    background: #666;
+    border: 1px solid #999;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 10px;
+    overflow: 'auto'
+}

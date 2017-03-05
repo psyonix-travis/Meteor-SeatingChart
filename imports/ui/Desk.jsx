@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Meteor } from 'meteor/meteor';
-import Draggable, {DraggableCore} from 'react-draggable';
+import Draggable from 'react-draggable';
 
 import { Desks } from '../api/desks.js';
 
@@ -32,8 +32,8 @@ export default class Desk extends Component {
             <Draggable
             defaultPosition={{x:this.props.desk.x, y:this.props.desk.y}}
             grid={[gridSize, gridSize]}
-            bounds="body"
-            onStop={this.onDragStop.bind(this)} 
+            bounds="parent"
+            onStop={this.onDragStop.bind(this)}
             >
                 <div className="box">
                     { this.props.currentUser ?
